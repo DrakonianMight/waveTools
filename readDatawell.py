@@ -90,7 +90,8 @@ def readSpectrum1D_f20(filepath, siteid = None):
 
     Returns
     -------
-    None.
+    spectrum: dataframe
+        a dataframe of the wave spectrum (1d)
 
     """
     
@@ -105,4 +106,129 @@ def readSpectrum1D_f20(filepath, siteid = None):
         spectrum['siteid'] = siteid
         
     return spectrum
+
+
+
+def readPrimDirSpectrum(filepath, siteid = None):
+    """
+    readDatawell Primary Directional Spectrum File (f21)
+
+    Parameters
+    ----------
+    filepath : str
+        filepath to the csv file of spectrum data
+    siteid : str or int, optional
+        An optional site identification field. The default is None.
+
+    Returns
+    -------
+    spectrum: dataframe
+        a dataframe of the Primary Directional Spectrum
+        
+    Notes
+    -----
+    More details are available in the datawell manual:
+    https://www.datawell.nl/Portals/0/Documents/Manuals/datawell_specification_csv_file_formats_s-02-v1-6-0.pdf
+
+    """
+    
+    def getColumnNames():
+        #build the column names
+        spreadNames = ['spr'+str(i) for i in range(100)]
+        dirNames = ['dir'+str(i) for i in range(100)]
+        return ['timestamp','daystamp','segments']+dirNames+spreadNames
+    
+    
+    Primdirspec = pd.read_csv(filepath, sep = '\t', header = None)
+    
+    Primdirspec.columns = getColumnNames()
+    Primdirspec.index = pd.to_datetime(Primdirspec.timestamp, unit = 's')
+    Primdirspec.index.name = 'datetime'
+    
+    # if we want to add a site identifier we can
+    if siteid is not None:
+        Primdirspec['siteid'] = siteid
+        
+    return Primdirspec
+
+
+def readSecDirSpectrum(filepath, siteid = None):
+    """
+    readDatawell Secondary Directional Spectrum File (f28)
+
+    Parameters
+    ----------
+    filepath : str
+        filepath to the csv file of spectrum data
+    siteid : str or int, optional
+        An optional site identification field. The default is None.
+
+    Returns
+    -------
+    spectrum: dataframe
+        a dataframe of the Secondary Directional Spectrum
+    
+    Notes
+    -----
+    More details are available in the datawell manual:
+    https://www.datawell.nl/Portals/0/Documents/Manuals/datawell_specification_csv_file_formats_s-02-v1-6-0.pdf
+
+    """
+    
+    def getColumnNames():
+        # build columns names
+        cosine = ['cosine_'+str(i) for i in range(100)]
+        sine = ['sine_'+str(i) for i in range(100)]
+        checkF = ['check_'+str(i) for i in range(100)]
+        return ['timestamp','daystamp','segments']+cosine+sine+checkF
+    
+    Secdirspec = pd.read_csv(filepath, sep = '\t', header = None)
+
+    Secdirspec.columns = getColumnNames()
+    Secdirspec.index = pd.to_datetime(Secdirspec.timestamp, unit = 's')
+    Secdirspec.index.name = 'datetime'
+    
+    # if we want to add a site identifier we can
+    if siteid is not None:
+        Secdirspec['siteid'] = siteid
+        
+    return Secdirspec
+    
+    
+    def readSpecWaveParams(filepath, siteid = None):
+        """
+        readDatawell CSV file spectrally derived wave parameters.
+
+        Parameters
+        ----------
+        filepath : str
+            filepath to the csv file of spectrum data
+        siteid : str or int, optional
+            An optional site identification field. The default is None.
+
+        Returns
+        -------
+        waveParams : dataframe
+            Dataframe of the wave parameters.
+
+        """
+        
+        waveParams = pd.read_csv(filepath, sep = '\t', header = None)
+        waveParams.columns = ['timestamp','daystamp','segments','Hs','Ti'
+                              ,'Te','T1','Tz','T3','Tc','Tp','Tp','Smax'
+                              ,'dirP(rad)','dirP_spread(rad)']
+        waveParams.index = pd.to_datetime(waveParams.timestamp, unit = 's')
+        waveParams.index.name = 'datetime'
+        
+        # if we want to add a site identifier we can
+        if siteid is not None:
+            waveParams['siteid'] = siteid
+        
+        return waveParams
+    
+    
+    
+    
+    
+    
     
