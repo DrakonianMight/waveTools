@@ -1,7 +1,7 @@
 # waveTools
 
 A Python toolbox for processing wave data.
-![Directional Spectrum](path/to/directional_spectrum.png){:height="300px" width="300px"}
+![Directional Spectrum](directional_spectrum.png){:height="300px" width="300px"}
 
 ## Objective
 
@@ -26,9 +26,9 @@ The toolbox is designed to work with data in 30 minute segments and either Mk4 d
 
 The following data format is assumed when parsing data into the module.
 
-| Time|Heave|North|West|
-| ----|-----|-----|----|
-| float|float|float|float|
+| Time |Heave |North |West |
+| ---- |----- | ----- |---- |
+| float | float | float | float |
 
 """
 import readDatawell, waveStats
