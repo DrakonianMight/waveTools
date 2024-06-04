@@ -1,0 +1,12 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pyzw
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints/

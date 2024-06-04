@@ -18,8 +18,8 @@ sys.path.insert(0, os.path.abspath('../src'))
 # -- Project information -----------------------------------------------------
 
 project = 'waveTools'
-copyright = '2022, DrakonianMight'
-author = 'DrakonianMight'
+copyright = '2024, DrakonianMight'
+author = 'Leo'
 
 # The full version, including alpha/beta/rc tags
 release = '1.2.1'
