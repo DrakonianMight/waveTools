@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>waveTools.readDatawell &mdash; waveTools 1.2.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> waveTools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">src</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">waveTools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>waveTools.readDatawell</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for waveTools.readDatawell</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Wed Oct 21 20:42:30 2020</span>
+
+<span class="sd">This program is free for distribution and use as per the MIT licence.</span>
+
+<span class="sd">This script contains a series of functions for ingesting datawell file format</span>
+<span class="sd">data into python.</span>
+
+
+<span class="sd">Author: Leo Peach</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<div class="viewcode-block" id="readDisplacement"><a class="viewcode-back" href="../../waveTools.html#waveTools.readDatawell.readDisplacement">[docs]</a><span class="k">def</span> <span class="nf">readDisplacement</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">siteid</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads in datawell displacement csv files and returns a dataframe.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    filepath : str</span>
+<span class="sd">        filepath to the csv file of the displacement data</span>
+<span class="sd">    siteid : str or int, optional</span>
+<span class="sd">        An optional site identification field. The default is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dipl : dataframe</span>
+<span class="sd">        a dataframe of the displacement data</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">dipl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">dipl</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span><span class="s1">&#39;status&#39;</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">,</span><span class="s1">&#39;n&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">]</span>
+    
+    <span class="n">dipl</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">dipl</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+    <span class="n">dipl</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;datetime&#39;</span>
+    
+    <span class="c1"># if we want to add a site identifier we can</span>
+    <span class="k">if</span> <span class="n">siteid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dipl</span><span class="p">[</span><span class="s1">&#39;siteid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">siteid</span>
+    
+    <span class="k">return</span> <span class="n">dipl</span></div>
+
+<div class="viewcode-block" id="datawellFreqBins1d"><a class="viewcode-back" href="../../waveTools.html#waveTools.readDatawell.datawellFreqBins1d">[docs]</a><span class="k">def</span> <span class="nf">datawellFreqBins1d</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Datawell Mk4 frequency bins</span>
+<span class="sd">    </span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list</span>
+<span class="sd">        list of 1d frequency bins</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">low</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="mf">0.025</span>
+    <span class="n">low</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">45</span><span class="p">):</span>
+        <span class="n">start</span><span class="o">+=</span><span class="mf">0.005</span>
+        <span class="n">low</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">mid</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="mf">0.26</span>
+    <span class="n">mid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="mi">78</span><span class="o">-</span><span class="mi">46</span><span class="p">)):</span>
+        <span class="n">start</span><span class="o">+=</span><span class="mf">0.01</span>
+        <span class="n">mid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">high</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="mf">0.6</span>
+    <span class="n">high</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="mi">100</span><span class="o">-</span><span class="mi">80</span><span class="p">)):</span>
+        <span class="n">start</span><span class="o">+=</span><span class="mf">0.02</span>
+        <span class="n">high</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">low</span><span class="o">+</span><span class="n">mid</span><span class="o">+</span><span class="n">high</span></div>
+
+<div class="viewcode-block" id="readSpectrum1D_f20"><a class="viewcode-back" href="../../waveTools.html#waveTools.readDatawell.readSpectrum1D_f20">[docs]</a><span class="k">def</span> <span class="nf">readSpectrum1D_f20</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">siteid</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    readDatawell 1d spectrum file (f20) csv</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    filepath : str</span>
+<span class="sd">        filepath to the csv file of the spectrum data</span>
+<span class="sd">    siteid : str or int, optional</span>
+<span class="sd">        An optional site identification field. The default is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    spectrum: dataframe</span>
+<span class="sd">        a dataframe of the wave spectrum (1d)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">spectrum</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+    
+    <span class="n">spectrum</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span><span class="s1">&#39;datestamp&#39;</span><span class="p">,</span><span class="s1">&#39;segments&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">datawellFreqBins1d</span><span class="p">()</span>
+    <span class="n">spectrum</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">spectrum</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+    <span class="n">spectrum</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;datetime&#39;</span>
+    
+    <span class="c1"># if we want to add a site identifier we can</span>
+    <span class="k">if</span> <span class="n">siteid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">spectrum</span><span class="p">[</span><span class="s1">&#39;siteid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">siteid</span>
+        
+    <span class="k">return</span> <span class="n">spectrum</span></div>
+
+
+
+<div class="viewcode-block" id="readPrimDirSpectrum"><a class="viewcode-back" href="../../waveTools.html#waveTools.readDatawell.readPrimDirSpectrum">[docs]</a><span class="k">def</span> <span class="nf">readPrimDirSpectrum</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">siteid</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    readDatawell Primary Directional Spectrum File (f21)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    filepath : str</span>
+<span class="sd">        filepath to the csv file of spectrum data</span>
+<span class="sd">    siteid : str or int, optional</span>
+<span class="sd">        An optional site identification field. The default is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    spectrum: dataframe</span>
+<span class="sd">        a dataframe of the Primary Directional Spectrum</span>
+<span class="sd">        </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    More details are available in the datawell manual:</span>
+<span class="sd">    https://www.datawell.nl/Portals/0/Documents/Manuals/datawell_specification_csv_file_formats_s-02-v1-6-0.pdf</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">getColumnNames</span><span class="p">():</span>
+        <span class="c1">#build the column names</span>
+        <span class="n">spreadNames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spr&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+        <span class="n">dirNames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dir&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span><span class="s1">&#39;daystamp&#39;</span><span class="p">,</span><span class="s1">&#39;segments&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">dirNames</span><span class="o">+</span><span class="n">spreadNames</span>
+    
+    
+    <span class="n">Primdirspec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+    
+    <span class="n">Primdirspec</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">getColumnNames</span><span class="p">()</span>
+    <span class="n">Primdirspec</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">Primdirspec</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+    <span class="n">Primdirspec</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;datetime&#39;</span>
+    
+    <span class="c1"># if we want to add a site identifier we can</span>
+    <span class="k">if</span> <span class="n">siteid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">Primdirspec</span><span class="p">[</span><span class="s1">&#39;siteid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">siteid</span>
+        
+    <span class="k">return</span> <span class="n">Primdirspec</span></div>
+
+
+<div class="viewcode-block" id="readSecDirSpectrum"><a class="viewcode-back" href="../../waveTools.html#waveTools.readDatawell.readSecDirSpectrum">[docs]</a><span class="k">def</span> <span class="nf">readSecDirSpectrum</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">siteid</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    readDatawell Secondary Directional Spectrum File (f28)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    filepath : str</span>
+<span class="sd">        filepath to the csv file of spectrum data</span>
+<span class="sd">    siteid : str or int, optional</span>
+<span class="sd">        An optional site identification field. The default is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    spectrum: dataframe</span>
+<span class="sd">        a dataframe of the Secondary Directional Spectrum</span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    More details are available in the datawell manual:</span>
+<span class="sd">    https://www.datawell.nl/Portals/0/Documents/Manuals/datawell_specification_csv_file_formats_s-02-v1-6-0.pdf</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">getColumnNames</span><span class="p">():</span>
+        <span class="c1"># build columns names</span>
+        <span class="n">cosine</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cosine_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+        <span class="n">sine</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sine_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+        <span class="n">checkF</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;check_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span><span class="s1">&#39;daystamp&#39;</span><span class="p">,</span><span class="s1">&#39;segments&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">cosine</span><span class="o">+</span><span class="n">sine</span><span class="o">+</span><span class="n">checkF</span>
+    
+    <span class="n">Secdirspec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="n">Secdirspec</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">getColumnNames</span><span class="p">()</span>
+    <span class="n">Secdirspec</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">Secdirspec</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+    <span class="n">Secdirspec</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;datetime&#39;</span>
+    
+    <span class="c1"># if we want to add a site identifier we can</span>
+    <span class="k">if</span> <span class="n">siteid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">Secdirspec</span><span class="p">[</span><span class="s1">&#39;siteid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">siteid</span>
+        
+    <span class="k">return</span> <span class="n">Secdirspec</span>
+    
+    
+    <span class="k">def</span> <span class="nf">readSpecWaveParams</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">siteid</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        readDatawell CSV file spectrally derived wave parameters.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        filepath : str</span>
+<span class="sd">            filepath to the csv file of spectrum data</span>
+<span class="sd">        siteid : str or int, optional</span>
+<span class="sd">            An optional site identification field. The default is None.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        waveParams : dataframe</span>
+<span class="sd">            Dataframe of the wave parameters.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">waveParams</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">waveParams</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span><span class="s1">&#39;daystamp&#39;</span><span class="p">,</span><span class="s1">&#39;segments&#39;</span><span class="p">,</span><span class="s1">&#39;Hs&#39;</span><span class="p">,</span><span class="s1">&#39;Ti&#39;</span>
+                              <span class="p">,</span><span class="s1">&#39;Te&#39;</span><span class="p">,</span><span class="s1">&#39;T1&#39;</span><span class="p">,</span><span class="s1">&#39;Tz&#39;</span><span class="p">,</span><span class="s1">&#39;T3&#39;</span><span class="p">,</span><span class="s1">&#39;Tc&#39;</span><span class="p">,</span><span class="s1">&#39;Tp&#39;</span><span class="p">,</span><span class="s1">&#39;Tp&#39;</span><span class="p">,</span><span class="s1">&#39;Smax&#39;</span>
+                              <span class="p">,</span><span class="s1">&#39;dirP(rad)&#39;</span><span class="p">,</span><span class="s1">&#39;dirP_spread(rad)&#39;</span><span class="p">]</span>
+        <span class="n">waveParams</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">waveParams</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+        <span class="n">waveParams</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;datetime&#39;</span>
+        
+        <span class="c1"># if we want to add a site identifier we can</span>
+        <span class="k">if</span> <span class="n">siteid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">waveParams</span><span class="p">[</span><span class="s1">&#39;siteid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">siteid</span>
+        
+        <span class="k">return</span> <span class="n">waveParams</span></div>
+    
+    
+    
+    
+    
+    
+    
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, DrakonianMight.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

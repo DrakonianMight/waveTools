@@ -1,0 +1,5 @@
+How to remake docs using sphinx.
+Follow the steps using the anaconda prompt
+1. cd to Docs
+2. run "make clean html" to clean up old docs
+3. run "make html" to remake docs

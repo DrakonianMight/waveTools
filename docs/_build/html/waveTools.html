@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>waveTools package &mdash; waveTools 1.2.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="src" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> waveTools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">waveTools package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-waveTools.readDatawell">waveTools.readDatawell module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-waveTools.waveStats">waveTools.waveStats module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-waveTools">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">waveTools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">src</a> &raquo;</li>
+      <li>waveTools package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/waveTools.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="wavetools-package">
+<h1>waveTools package<a class="headerlink" href="#wavetools-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-waveTools.readDatawell">
+<span id="wavetools-readdatawell-module"></span><h2>waveTools.readDatawell module<a class="headerlink" href="#module-waveTools.readDatawell" title="Permalink to this heading"></a></h2>
+<p>Created on Wed Oct 21 20:42:30 2020</p>
+<p>This program is free for distribution and use as per the MIT licence.</p>
+<p>This script contains a series of functions for ingesting datawell file format
+data into python.</p>
+<p>Author: Leo Peach</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="waveTools.readDatawell.datawellFreqBins1d">
+<span class="sig-prename descclassname"><span class="pre">waveTools.readDatawell.</span></span><span class="sig-name descname"><span class="pre">datawellFreqBins1d</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/readDatawell.html#datawellFreqBins1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.readDatawell.datawellFreqBins1d" title="Permalink to this definition"></a></dt>
+<dd><p>Datawell Mk4 frequency bins</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of 1d frequency bins</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="waveTools.readDatawell.readDisplacement">
+<span class="sig-prename descclassname"><span class="pre">waveTools.readDatawell.</span></span><span class="sig-name descname"><span class="pre">readDisplacement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/readDatawell.html#readDisplacement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.readDatawell.readDisplacement" title="Permalink to this definition"></a></dt>
+<dd><p>Reads in datawell displacement csv files and returns a dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – filepath to the csv file of the displacement data</p></li>
+<li><p><strong>siteid</strong> (<em>str</em><em> or </em><em>int</em><em>, </em><em>optional</em>) – An optional site identification field. The default is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dipl</strong> – a dataframe of the displacement data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="waveTools.readDatawell.readPrimDirSpectrum">
+<span class="sig-prename descclassname"><span class="pre">waveTools.readDatawell.</span></span><span class="sig-name descname"><span class="pre">readPrimDirSpectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/readDatawell.html#readPrimDirSpectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.readDatawell.readPrimDirSpectrum" title="Permalink to this definition"></a></dt>
+<dd><p>readDatawell Primary Directional Spectrum File (f21)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – filepath to the csv file of spectrum data</p></li>
+<li><p><strong>siteid</strong> (<em>str</em><em> or </em><em>int</em><em>, </em><em>optional</em>) – An optional site identification field. The default is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>spectrum</strong> – a dataframe of the Primary Directional Spectrum</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dataframe</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>More details are available in the datawell manual:
+<a class="reference external" href="https://www.datawell.nl/Portals/0/Documents/Manuals/datawell_specification_csv_file_formats_s-02-v1-6-0.pdf">https://www.datawell.nl/Portals/0/Documents/Manuals/datawell_specification_csv_file_formats_s-02-v1-6-0.pdf</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="waveTools.readDatawell.readSecDirSpectrum">
+<span class="sig-prename descclassname"><span class="pre">waveTools.readDatawell.</span></span><span class="sig-name descname"><span class="pre">readSecDirSpectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/readDatawell.html#readSecDirSpectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.readDatawell.readSecDirSpectrum" title="Permalink to this definition"></a></dt>
+<dd><p>readDatawell Secondary Directional Spectrum File (f28)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – filepath to the csv file of spectrum data</p></li>
+<li><p><strong>siteid</strong> (<em>str</em><em> or </em><em>int</em><em>, </em><em>optional</em>) – An optional site identification field. The default is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>spectrum</strong> – a dataframe of the Secondary Directional Spectrum</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dataframe</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>More details are available in the datawell manual:
+<a class="reference external" href="https://www.datawell.nl/Portals/0/Documents/Manuals/datawell_specification_csv_file_formats_s-02-v1-6-0.pdf">https://www.datawell.nl/Portals/0/Documents/Manuals/datawell_specification_csv_file_formats_s-02-v1-6-0.pdf</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="waveTools.readDatawell.readSpectrum1D_f20">
+<span class="sig-prename descclassname"><span class="pre">waveTools.readDatawell.</span></span><span class="sig-name descname"><span class="pre">readSpectrum1D_f20</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/readDatawell.html#readSpectrum1D_f20"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.readDatawell.readSpectrum1D_f20" title="Permalink to this definition"></a></dt>
+<dd><p>readDatawell 1d spectrum file (f20) csv</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – filepath to the csv file of the spectrum data</p></li>
+<li><p><strong>siteid</strong> (<em>str</em><em> or </em><em>int</em><em>, </em><em>optional</em>) – An optional site identification field. The default is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>spectrum</strong> – a dataframe of the wave spectrum (1d)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-waveTools.waveStats">
+<span id="wavetools-wavestats-module"></span><h2>waveTools.waveStats module<a class="headerlink" href="#module-waveTools.waveStats" title="Permalink to this heading"></a></h2>
+<p>Wave Statistics Tools</p>
+<p>A series of tools designed to perform wave analysis.
+Uses a class object to wrap and peform analysis.</p>
+<p>This is authored under MIT licence.</p>
+<p>Last edited: 19-06-2022
+Verson: 1.2.1</p>
+<p>Changelog:</p>
+<p>v0.1 - added displacements
+v0.4 - added 1d displacements class object
+v1.0 - added 2d spectra functionality
+v1.2 - added filter tools
+v1.2.1 - bug fix for depreciated numpy functions</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">waveTools.waveStats.</span></span><span class="sig-name descname"><span class="pre">displacements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Displacement data class.</p>
+<p>A displacement data class with a series of useful methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataframe</strong> (<em>DataFrame</em>) – A dateframe containing: seconds, heave, north, west</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.filepath">
+<span class="sig-name descname"><span class="pre">filepath</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.filepath" title="Permalink to this definition"></a></dt>
+<dd><p>A filepath to the <a class="reference external" href="data:time">data:time</a>, heave, north, west</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.array">
+<span class="sig-name descname"><span class="pre">array</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.array" title="Permalink to this definition"></a></dt>
+<dd><p>(time, heave, north, west) all the displacement data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.time">
+<span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.time" title="Permalink to this definition"></a></dt>
+<dd><p>(time) all the times from the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.heave">
+<span class="sig-name descname"><span class="pre">heave</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.heave" title="Permalink to this definition"></a></dt>
+<dd><p>(heave) all the vertial heave displacements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.north">
+<span class="sig-name descname"><span class="pre">north</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.north" title="Permalink to this definition"></a></dt>
+<dd><p>(north) all the north displacements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.west">
+<span class="sig-name descname"><span class="pre">west</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.west" title="Permalink to this definition"></a></dt>
+<dd><p>(west) all the west displacements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.crossings">
+<span class="sig-name descname"><span class="pre">crossings</span></span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.crossings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.crossings" title="Permalink to this definition"></a></dt>
+<dd><p>(waveHeights, wavePeriods) from zero upcrossing analysis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list , list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.waveHeights">
+<span class="sig-name descname"><span class="pre">waveHeights</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.waveHeights" title="Permalink to this definition"></a></dt>
+<dd><p>a list of wave heights in metres</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.wavePeriods">
+<span class="sig-name descname"><span class="pre">wavePeriods</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.wavePeriods" title="Permalink to this definition"></a></dt>
+<dd><p>a list of wave period in seconds</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.spectra">
+<span class="sig-name descname"><span class="pre">spectra</span></span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.spectra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.spectra" title="Permalink to this definition"></a></dt>
+<dd><p>(frequencies, power) calcuated using standard methods by default can
+be modified</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.f">
+<span class="sig-name descname"><span class="pre">f</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.f" title="Permalink to this definition"></a></dt>
+<dd><p>frequencies as calcuated from the spectral analysis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarrary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.power">
+<span class="sig-name descname"><span class="pre">power</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.power" title="Permalink to this definition"></a></dt>
+<dd><p>power spectral density array calculated from the spectral analysis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.dir_spectra">
+<span class="sig-name descname"><span class="pre">dir_spectra</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.dir_spectra" title="Permalink to this definition"></a></dt>
+<dd><p>a dataframe object containing the directional spectra</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.dir_spectra_array">
+<span class="sig-name descname"><span class="pre">dir_spectra_array</span></span><a class="headerlink" href="#waveTools.waveStats.displacements.dir_spectra_array" title="Permalink to this definition"></a></dt>
+<dd><p>(127, 37) containing the directional spectra applied across 360 degrees</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">wave_stats</span> <span class="pre">:</span> <span class="pre">DataFrame</span></span></dt>
+<dd><p>a dataframe object containing wave statistics most commonly used</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">crossings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.crossings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>Analyses the displacements to calculate the number of waves, periods and times</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>nparray</em>) – time array in seconds</p></li>
+<li><p><strong>heave</strong> (<em>nparray</em>) – heave array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>waveHeights</strong> (<em>list</em>) – list wave heights</p></li>
+<li><p><strong>wavePeriods</strong> (<em>list</em>) – list of wave periods</p></li>
+<li><p><strong>times</strong> (<em>list</em>) – list of times</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.data">
+<span class="sig-name descname"><span class="pre">data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.data" title="Permalink to this definition"></a></dt>
+<dd><p>A simple method of returning the data object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.directional_spectra">
+<span class="sig-name descname"><span class="pre">directional_spectra</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.directional_spectra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.directional_spectra" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates directional spectra</p>
+<p>Step 1: Takeaway 250 from the total (4602), and divide into 17 segments (256 each)</p>
+<p>Step 2: For each segement apply tukey window (N terms only)</p>
+<p>Step 3: FFT for each of the three displacements</p>
+<p>Step 4: Calculate cross and quadspectra</p>
+<p>Step 5: Calculate fourier and centred fourier coefficients</p>
+<p>Step 6: Calculate directional spectra parameters</p>
+<p>Step 7: Spread directional spectra parameters onto array</p>
+<p>Step 8: Average the results for each segment together</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>dir_spec_ave</strong> – Returns a DataFrame object containing directional spectra calulation
+results. This is the average of 17, 256 segements using Bartlett method.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.h10">
+<span class="sig-name descname"><span class="pre">h10</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.h10"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.h10" title="Permalink to this definition"></a></dt>
+<dd><p>H10 is defined as the average of the largest 1/10 waves in a record.
+The determination of H10 is based on the zero up-crossing method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>h10</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.hm0">
+<span class="sig-name descname"><span class="pre">hm0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.hm0"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.hm0" title="Permalink to this definition"></a></dt>
+<dd><p>Signifcant wave height as calculated from the power spectrum zeorth moment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>hm0</strong> – meters</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.hmax">
+<span class="sig-name descname"><span class="pre">hmax</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.hmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.hmax" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum wave height, Hmax, represents the maximum value of the wave
+height measured over a given period of time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>hmax</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.hmean">
+<span class="sig-name descname"><span class="pre">hmean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.hmean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.hmean" title="Permalink to this definition"></a></dt>
+<dd><p>Hmean is defined as the average of the wave heights</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>hmean</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.hrms">
+<span class="sig-name descname"><span class="pre">hrms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.hrms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.hrms" title="Permalink to this definition"></a></dt>
+<dd><p>The RMS of wave heights</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>hrms</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.hsig">
+<span class="sig-name descname"><span class="pre">hsig</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.hsig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.hsig" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the zero upcrossing signficant wave height.</p>
+<p>The signficant wave height, the average wave height from the largest
+1/3 of waves in a given time series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>waveHeights</strong> (<em>list</em>) – a list containing the wave heights</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Hsig</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.meanDir">
+<span class="sig-name descname"><span class="pre">meanDir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.meanDir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.meanDir" title="Permalink to this definition"></a></dt>
+<dd><p>Mean wave direction</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.pkDir">
+<span class="sig-name descname"><span class="pre">pkDir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.pkDir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.pkDir" title="Permalink to this definition"></a></dt>
+<dd><p>Peak direction calculated as the wave direction with the maximum energy</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.plot_3d">
+<span class="sig-name descname"><span class="pre">plot_3d</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.plot_3d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.plot_3d" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a 3d plot of the displacements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>fig</strong> (<em>matplotlib figure obj</em>) – Figure object</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib axis obj</em>) – Axis object</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.plot_directional_spectra">
+<span class="sig-name descname"><span class="pre">plot_directional_spectra</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.plot_directional_spectra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.plot_directional_spectra" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a polar plot of the directional spectra</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>ax</strong> – Axis object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>matplotlib axis obj</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.plot_displacements">
+<span class="sig-name descname"><span class="pre">plot_displacements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.plot_displacements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.plot_displacements" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the 3 displacements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>fig</strong> (<em>matplotlib figure obj</em>) – Figure object</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib axis obj</em>) – Axis object</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.plot_heave">
+<span class="sig-name descname"><span class="pre">plot_heave</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.plot_heave"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.plot_heave" title="Permalink to this definition"></a></dt>
+<dd><p>Plots the heave data in multiple subplots for inspection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>fig</strong> (<em>matplotlib figure obj</em>) – Figure object</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib axis obj</em>) – Axis object</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.plot_spectra">
+<span class="sig-name descname"><span class="pre">plot_spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">semi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.plot_spectra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.plot_spectra" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a spectrograph of the wave spectra.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>semi</strong> (<em>Bool</em>) – plot style, default is semilogy</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>fig</strong> (<em>matplotlib figure obj</em>) – Figure object</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib axis obj</em>) – Axis object</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.plot_waveheights">
+<span class="sig-name descname"><span class="pre">plot_waveheights</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.plot_waveheights"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.plot_waveheights" title="Permalink to this definition"></a></dt>
+<dd><p>plots ranked wave heights</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>fig</strong> (<em>matplotlib figure obj</em>) – Figure object</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib axis obj</em>) – Axis object</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.sampling_frequency">
+<span class="sig-name descname"><span class="pre">sampling_frequency</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.sampling_frequency"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.sampling_frequency" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the sampling frequency of the displacements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sampling_frequency</strong> (<em>ndarray</em>) – time 2 - time1</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>float</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sampling frequency in hz</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.spectra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates a non-directional spectra using welch’s method the default
+uses and overlapping method with a Hann window of 17 segments.</p>
+<p>window length based on 4608 records in 30 mins -250 to make 28.4</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>heave</strong> (<em>nparray</em>) – nparray of the heave data</p></li>
+<li><p><strong>sf</strong> (<em>float</em>) – sampling frequency of the data</p></li>
+<li><p><strong>window</strong> (<em>nparray</em>) – window method to use in welch’s method when adding a new window
+the signal processing library for scipy should be used. e.g.
+scipy.signal.hann</p></li>
+<li><p><strong>overlap</strong> (<em>Bool</em>) – default value is True however if wanted this can be set to false
+depending on the window type.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – a list of the different frequencies output from the welch’s method
+fft calcuation</p></li>
+<li><p><strong>Pxx_den</strong> (<em>nparray</em>) – a list of power spectral density values for each frequency.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>‘Scipy.Signal &lt;<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.html">https://docs.scipy.org/doc/scipy/reference/signal.html</a>&gt;’_</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.summary">
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.summary" title="Permalink to this definition"></a></dt>
+<dd><p>prints a summary of the displacement data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.t02">
+<span class="sig-name descname"><span class="pre">t02</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.t02"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.t02" title="Permalink to this definition"></a></dt>
+<dd><p>Mean wave period as defined from the spectra.</p>
+<ul class="simple">
+<li><p>uses a trapeziodal method to estimate the moments.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>t02</strong> – seconds</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.tmax">
+<span class="sig-name descname"><span class="pre">tmax</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.tmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.tmax" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum wave period, Tmax, represents the maximum value of the
+discrete wave periods measured</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>tmax</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.tp">
+<span class="sig-name descname"><span class="pre">tp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.tp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.tp" title="Permalink to this definition"></a></dt>
+<dd><p>Peak wave period as defined as the frequency of the peak wave energy.
+converted to seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>tp</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.ts">
+<span class="sig-name descname"><span class="pre">ts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.ts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.ts" title="Permalink to this definition"></a></dt>
+<dd><p>The significant wave period, represented by T1/3 or Ts is defined as the
+average period of the largest 1/3 waves in a record</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>tz</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.tz">
+<span class="sig-name descname"><span class="pre">tz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.tz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.tz" title="Permalink to this definition"></a></dt>
+<dd><p>The mean wave period, Tz, defined as the aver periods of waves from
+upcrossing analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Tz</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements.wave_stats">
+<span class="sig-name descname"><span class="pre">wave_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements.wave_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements.wave_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Wave Statistics summary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>wave stats</strong> – a dataframe of the summary wave statistics</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">waveTools.waveStats.</span></span><span class="sig-name descname"><span class="pre">displacements_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Non Directional Displacement data class.</p>
+<p>A displacement data class with a series of useful methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataframe</strong> (<em>DataFrame</em>) – A dateframe containing: seconds, heave, north, west</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.filepath">
+<span class="sig-name descname"><span class="pre">filepath</span></span><a class="headerlink" href="#waveTools.waveStats.displacements_1d.filepath" title="Permalink to this definition"></a></dt>
+<dd><p>A filepath to the <a class="reference external" href="data:time">data:time</a>, heave, north, west</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.array">
+<span class="sig-name descname"><span class="pre">array</span></span><a class="headerlink" href="#waveTools.waveStats.displacements_1d.array" title="Permalink to this definition"></a></dt>
+<dd><p>(time, heave, north, west) all the displacement data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.time">
+<span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#waveTools.waveStats.displacements_1d.time" title="Permalink to this definition"></a></dt>
+<dd><p>(time) all the times from the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.heave">
+<span class="sig-name descname"><span class="pre">heave</span></span><a class="headerlink" href="#waveTools.waveStats.displacements_1d.heave" title="Permalink to this definition"></a></dt>
+<dd><p>(heave) all the vertial heave displacements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.north">
+<span class="sig-name descname"><span class="pre">north</span></span><a class="headerlink" href="#waveTools.waveStats.displacements_1d.north" title="Permalink to this definition"></a></dt>
+<dd><p>(north) all the north displacements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.west">
+<span class="sig-name descname"><span class="pre">west</span></span><a class="headerlink" href="#waveTools.waveStats.displacements_1d.west" title="Permalink to this definition"></a></dt>
+<dd><p>(west) all the west displacements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.crossings">
+<span class="sig-name descname"><span class="pre">crossings</span></span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.crossings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.crossings" title="Permalink to this definition"></a></dt>
+<dd><p>(waveHeights, wavePeriods) from zero upcrossing analysis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list , list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.waveHeights">
+<span class="sig-name descname"><span class="pre">waveHeights</span></span><a class="headerlink" href="#waveTools.waveStats.displacements_1d.waveHeights" title="Permalink to this definition"></a></dt>
+<dd><p>a list of wave heights in metres</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.wavePeriods">
+<span class="sig-name descname"><span class="pre">wavePeriods</span></span><a class="headerlink" href="#waveTools.waveStats.displacements_1d.wavePeriods" title="Permalink to this definition"></a></dt>
+<dd><p>a list of wave period in seconds</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.spectra">
+<span class="sig-name descname"><span class="pre">spectra</span></span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.spectra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.spectra" title="Permalink to this definition"></a></dt>
+<dd><p>(frequencies, power) using standard methods by default can
+be modified</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.f">
+<span class="sig-name descname"><span class="pre">f</span></span><a class="headerlink" href="#waveTools.waveStats.displacements_1d.f" title="Permalink to this definition"></a></dt>
+<dd><p>frequencies from the spectral analysis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarrary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.power">
+<span class="sig-name descname"><span class="pre">power</span></span><a class="headerlink" href="#waveTools.waveStats.displacements_1d.power" title="Permalink to this definition"></a></dt>
+<dd><p>power spectral density array from the spectral analysis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">wave_stats</span> <span class="pre">:</span> <span class="pre">DataFrame</span></span></dt>
+<dd><p>a dataframe object containing wave statistics most commonly used</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">crossings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.crossings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><p>Analyses the displacements to calculate the number of waves, periods and times</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>nparray</em>) – time array in seconds</p></li>
+<li><p><strong>heave</strong> (<em>nparray</em>) – heave array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>waveHeights</strong> (<em>list</em>) – list wave heights</p></li>
+<li><p><strong>wavePeriods</strong> (<em>list</em>) – list of wave periods</p></li>
+<li><p><strong>times</strong> (<em>list</em>) – list of times</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.data">
+<span class="sig-name descname"><span class="pre">data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.data" title="Permalink to this definition"></a></dt>
+<dd><p>A simple method of returning the data object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.h10">
+<span class="sig-name descname"><span class="pre">h10</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.h10"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.h10" title="Permalink to this definition"></a></dt>
+<dd><p>H10 is defined as the average of the largest 1/10 waves in a record.
+The determination of H10 is based on the zero up-crossing method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>h10</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.hm0">
+<span class="sig-name descname"><span class="pre">hm0</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.hm0"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.hm0" title="Permalink to this definition"></a></dt>
+<dd><p>Signifcant wave height as calculated from the power spectrum zeorth moment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>hm0</strong> – meters</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.hmax">
+<span class="sig-name descname"><span class="pre">hmax</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.hmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.hmax" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum wave height, Hmax, represents the maximum value of the wave
+height measured over a given period of time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>hmax</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.hmean">
+<span class="sig-name descname"><span class="pre">hmean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.hmean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.hmean" title="Permalink to this definition"></a></dt>
+<dd><p>Hmean is defined as the average of the wave heights</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>hmean</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.hrms">
+<span class="sig-name descname"><span class="pre">hrms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.hrms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.hrms" title="Permalink to this definition"></a></dt>
+<dd><p>The RMS of wave heights</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>hrms</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.hsig">
+<span class="sig-name descname"><span class="pre">hsig</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.hsig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.hsig" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the zero upcrossing signficant wave height.</p>
+<p>The signficant wave height, the average wave height from the largest
+1/3 of waves in a given time series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>waveHeights</strong> (<em>list</em>) – a list containing the wave heights</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Hsig</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.plot_spectra">
+<span class="sig-name descname"><span class="pre">plot_spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">semi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.plot_spectra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.plot_spectra" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a spectrograph of the wave spectra.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>semi</strong> (<em>Bool</em>) – plot style, default is semilogy</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>fig</strong> (<em>matplotlib figure obj</em>) – Figure object</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib axis obj</em>) – Axis object</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.plot_waveheights">
+<span class="sig-name descname"><span class="pre">plot_waveheights</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.plot_waveheights"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.plot_waveheights" title="Permalink to this definition"></a></dt>
+<dd><p>plots ranked wave heights</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>fig</strong> (<em>matplotlib figure obj</em>) – Figure object</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib axis obj</em>) – Axis object</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.sampling_frequency">
+<span class="sig-name descname"><span class="pre">sampling_frequency</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.sampling_frequency"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.sampling_frequency" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the sampling frequency of the displacements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sampling_frequency</strong> (<em>ndarray</em>) – time 2 - time1</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>float</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sampling frequency in hz</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.spectra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates a non-directional spectra using welch’s method the default
+uses and overlapping method with a Hann window of 17 segments.</p>
+<p>window length based on 4608 records in 30 mins -250 to make 28.4</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>heave</strong> (<em>nparray</em>) – nparray of the heave data</p></li>
+<li><p><strong>sf</strong> (<em>float</em>) – sampling frequency of the data</p></li>
+<li><p><strong>window</strong> (<em>nparray</em>) – window method to use in welch’s method when adding a new window
+the signal processing library for scipy should be used. e.g.
+scipy.signal.hann</p></li>
+<li><p><strong>overlap</strong> (<em>Bool</em>) – default value is True however if wanted this can be set to false
+depending on the window type.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – a list of the different frequencies output from the welch’s method
+fft calcuation</p></li>
+<li><p><strong>Pxx_den</strong> (<em>nparray</em>) – a list of power spectral density values for each frequency.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>‘Scipy.Signal &lt;<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.html">https://docs.scipy.org/doc/scipy/reference/signal.html</a>&gt;’_</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.summary">
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.summary" title="Permalink to this definition"></a></dt>
+<dd><p>prints a summary of the displacement data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.t02">
+<span class="sig-name descname"><span class="pre">t02</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.t02"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.t02" title="Permalink to this definition"></a></dt>
+<dd><p>Mean wave period as defined from the spectra.</p>
+<ul class="simple">
+<li><p>uses a trapeziodal method to estimate the moments.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>t02</strong> – seconds</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.tmax">
+<span class="sig-name descname"><span class="pre">tmax</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.tmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.tmax" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum wave period, Tmax, represents the maximum value of the
+discrete wave periods measured</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>tmax</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.tp">
+<span class="sig-name descname"><span class="pre">tp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.tp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.tp" title="Permalink to this definition"></a></dt>
+<dd><p>Peak wave period as defined as the frequency of the peak wave energy.
+converted to seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>tp</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.ts">
+<span class="sig-name descname"><span class="pre">ts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.ts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.ts" title="Permalink to this definition"></a></dt>
+<dd><p>The significant wave period, represented by T1/3 or Ts is defined as the
+average period of the largest 1/3 waves in a record</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>tz</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.tz">
+<span class="sig-name descname"><span class="pre">tz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.tz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.tz" title="Permalink to this definition"></a></dt>
+<dd><p>The mean wave period, Tz, defined as the aver periods of waves from
+upcrossing analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Tz</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.displacements_1d.wave_stats">
+<span class="sig-name descname"><span class="pre">wave_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#displacements_1d.wave_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.displacements_1d.wave_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Wave Statistics summary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>wave stats</strong> – a dataframe of the summary wave statistics</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="waveTools.waveStats.filtered_displacements">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">waveTools.waveStats.</span></span><span class="sig-name descname"><span class="pre">filtered_displacements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#filtered_displacements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.filtered_displacements" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#waveTools.waveStats.displacements" title="waveTools.waveStats.displacements"><code class="xref py py-class docutils literal notranslate"><span class="pre">displacements</span></code></a></p>
+<p>Filtered displacement data class.</p>
+<p>A sub of the displacement class which provides a filter methods</p>
+<dl class="simple">
+<dt>displacements<span class="classifier">parent</span></dt><dd><p>inherits from the displacements parent class for methods and objects</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">butterworth</span> <span class="pre">:</span> <span class="pre">method</span></span></dt>
+<dd><p>when called modifies the baseline data object filetering the data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.filtered_displacements.butterworth">
+<span class="sig-name descname"><span class="pre">butterworth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lowcutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#filtered_displacements.butterworth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.filtered_displacements.butterworth" title="Permalink to this definition"></a></dt>
+<dd><p>Perform butterworth filter on each of the different displacements</p>
+<p>WARNING: this function modifies the original object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lowcutoff</strong> (<em>int</em>) – the cuttoff frequency you wish to use in seconds
+default value is 40 seconds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.filtered_displacements.plot_butterworth">
+<span class="sig-name descname"><span class="pre">plot_butterworth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lowcutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#filtered_displacements.plot_butterworth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.filtered_displacements.plot_butterworth" title="Permalink to this definition"></a></dt>
+<dd><p>Plot a butterworth filter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lowcutoff</strong> (<em>int</em>) – the low frequency cutoff point in seconds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.filtered_displacements.spike_removal">
+<span class="sig-name descname"><span class="pre">spike_removal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">standard_deviations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#filtered_displacements.spike_removal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.filtered_displacements.spike_removal" title="Permalink to this definition"></a></dt>
+<dd><p>A coarse spike removal filter that removes large spikes in the data</p>
+<p>WARNING: This method modifies the original object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>standard_deviations</strong> (<em>int</em>) – the number of standard deviations to use when applying the filter
+default value is 5</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="waveTools.waveStats.filtered_displacements_1d">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">waveTools.waveStats.</span></span><span class="sig-name descname"><span class="pre">filtered_displacements_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#filtered_displacements_1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.filtered_displacements_1d" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#waveTools.waveStats.displacements_1d" title="waveTools.waveStats.displacements_1d"><code class="xref py py-class docutils literal notranslate"><span class="pre">displacements_1d</span></code></a></p>
+<p>Filtered displacement data class.</p>
+<p>A sub of the displacement class which provides a filter methods</p>
+<dl class="simple">
+<dt>displacements_1d<span class="classifier">parent</span></dt><dd><p>inherits from the displacements_1d parent class for methods and objects</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">butterworth</span> <span class="pre">:</span> <span class="pre">method</span></span></dt>
+<dd><p>when called modifies the baseline data object filetering the data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.filtered_displacements_1d.butterworth">
+<span class="sig-name descname"><span class="pre">butterworth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lowcutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#filtered_displacements_1d.butterworth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.filtered_displacements_1d.butterworth" title="Permalink to this definition"></a></dt>
+<dd><p>Perform butterworth filter on each of the different displacements</p>
+<p>WARNING: this function modifies the original object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lowcutoff</strong> (<em>int</em>) – the cuttoff frequency you wish to use in seconds
+default value is 40 seconds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.filtered_displacements_1d.plot_butterworth">
+<span class="sig-name descname"><span class="pre">plot_butterworth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lowcutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#filtered_displacements_1d.plot_butterworth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.filtered_displacements_1d.plot_butterworth" title="Permalink to this definition"></a></dt>
+<dd><p>Plot a butterworth filter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lowcutoff</strong> (<em>int</em>) – the low frequency cutoff point in seconds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="waveTools.waveStats.filtered_displacements_1d.spike_removal">
+<span class="sig-name descname"><span class="pre">spike_removal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">standard_deviations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/waveTools/waveStats.html#filtered_displacements_1d.spike_removal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#waveTools.waveStats.filtered_displacements_1d.spike_removal" title="Permalink to this definition"></a></dt>
+<dd><p>A coarse spike removal filter that removes large spikes in the data</p>
+<p>WARNING: This method modifies the original object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>standard_deviations</strong> (<em>int</em>) – the number of standard deviations to use when applying the filter
+default value is 5</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-waveTools">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-waveTools" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="src" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, DrakonianMight.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
