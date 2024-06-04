@@ -15,9 +15,10 @@ You can install waveTools directly from GitHub using pip. Here's how:
 
 2. Run the following command:
 
-```bash
+"""
+bash
 pip install git+https://github.com/yourusername/waveTools.git
-
+"""
 ### Example
 
 A simple example from datawell displacement data.
